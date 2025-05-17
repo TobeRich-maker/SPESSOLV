@@ -1,101 +1,138 @@
-import Image from "next/image";
+"use client"
+
+import { Database, Globe, LayoutGrid, LineChart, Server, Shield } from "lucide-react"
+import Navbar from "@/components/navbar"
+import HeroSection from "@/components/hero-section"
+import ProductShowcase from "@/components/product-showcase"
+import FeaturesGrid from "@/components/features-grid"
+import TestimonialSlider from "@/components/testimonial-slider"
+import ContactSection from "@/components/contact-section"
+import Footer from "@/components/footer"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const features = [
+    {
+      title: "Web Development",
+      description: "Custom web applications built with modern frameworks and technologies.",
+      icon: Globe,
+    },
+    {
+      title: "Mobile Apps",
+      description: "Cross-platform mobile applications for iOS and Android devices.",
+      icon: LayoutGrid,
+    },
+    {
+      title: "Cloud Solutions",
+      description: "Scalable cloud infrastructure and deployment solutions.",
+      icon: Server,
+    },
+    {
+      title: "Database Design",
+      description: "Efficient database architecture and optimization services.",
+      icon: Database,
+    },
+    {
+      title: "Data Analytics",
+      description: "Turn your data into actionable insights with our analytics solutions.",
+      icon: LineChart,
+    },
+    {
+      title: "Security Services",
+      description: "Protect your applications with our comprehensive security solutions.",
+      icon: Shield,
+    },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+  const testimonials = [
+    {
+      quote:
+        "SPELSOLVE delivered our project on time and exceeded our expectations. Their team was professional and responsive throughout the entire process.",
+      author: "Sarah Johnson",
+      role: "CTO",
+      company: "TechCorp Inc.",
+      image: "/placeholder.svg?height=100&width=100",
+    },
+    {
+      quote:
+        "Working with SPELSOLVE was a game-changer for our business. They understood our needs and delivered a solution that helped us grow by 40% in the first year.",
+      author: "Michael Chen",
+      role: "CEO",
+      company: "GrowthStart",
+      image: "/placeholder.svg?height=100&width=100",
+    },
+    {
+      quote:
+        "The team at SPELSOLVE provided exceptional service and technical expertise. They're now our go-to partner for all software development needs.",
+      author: "Emily Rodriguez",
+      role: "Product Manager",
+      company: "InnovateCo",
+      image: "/placeholder.svg?height=100&width=100",
+    },
+  ]
+
+  return (
+    <main>
+      <Navbar />
+      <HeroSection />
+
+      <div id="products">
+        <ProductShowcase
+          title="Enterprise Resource Planning"
+          subtitle="Business Management"
+          description="A comprehensive ERP solution designed to streamline your business operations, increase efficiency, and drive growth."
+          imageSrc="/placeholder.svg?height=800&width=800"
+          imageAlt="Enterprise Resource Planning Software"
+          features={[
+            {
+              title: "Centralized Data Management",
+              description: "Keep all your business data in one secure, accessible location.",
+            },
+            {
+              title: "Automated Workflows",
+              description: "Streamline processes and reduce manual tasks with intelligent automation.",
+            },
+            {
+              title: "Real-time Analytics",
+              description: "Make informed decisions with up-to-the-minute business insights.",
+            },
+          ]}
+        />
+
+        <ProductShowcase
+          title="Customer Relationship Management"
+          subtitle="Client Success"
+          description="Build stronger customer relationships, improve satisfaction, and increase retention with our intuitive CRM platform."
+          imageSrc="/placeholder.svg?height=800&width=800"
+          imageAlt="Customer Relationship Management Software"
+          reverse={true}
+          features={[
+            {
+              title: "360° Customer View",
+              description: "Get a complete picture of each customer's journey and interactions.",
+            },
+            {
+              title: "Sales Pipeline Management",
+              description: "Track and optimize your sales process from lead to close.",
+            },
+            {
+              title: "Marketing Automation",
+              description: "Create, deploy, and analyze marketing campaigns with ease.",
+            },
+          ]}
+        />
+      </div>
+
+      <FeaturesGrid
+        title="Why Choose SPELSOLVE"
+        subtitle="We combine technical expertise with business acumen to deliver solutions that drive real results"
+        features={features}
+      />
+
+      <TestimonialSlider testimonials={testimonials} />
+
+      <ContactSection />
+
+      <Footer />
+    </main>
+  )
 }
